@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="380px" height="380px" viewBox="0 0 380 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="190" cy="190" r="190"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.192708333">
+        <g id="Desktop-HD" transform="translate(-831.000000, -235.000000)">
+            <g id="header">
+                <g id="circle" transform="translate(831.000000, 235.000000)">
+                    <g id="Group">
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Oval" fill="#D8D8D8" xlink:href="#path-1"></use>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="17.2315036 30.8353222 17.2315036 0.906921241 91.9151686 0.906921241 156.897375 30.8353222"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="405.123765 88.8782816 405.123765 118.806683 330.584493 118.806683 265.727924 88.8782816"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="15.4176611 90.6921241 15.4176611 60.7637232 217.511868 60.7637232 282.052506 90.6921241"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="417.392394 29.928401 417.392394 59.8568019 215.140063 59.8568019 150.548926 29.928401"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="402.673031 178.663484 402.673031 208.591885 327.989366 208.591885 263.00716 178.663484"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="15.4176611 121.527446 15.4176611 91.5990453 90.1013261 91.5990453 155.083532 121.527446"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="404.486874 119.713604 404.486874 149.642005 202.392667 149.642005 137.852029 119.713604"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="0.906921241 180.477327 0.906921241 150.548926 203.001128 150.548926 267.541766 180.477327"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="1.81384248 211.312649 1.81384248 181.384248 76.4975075 181.384248 141.479714 211.312649"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="389.976134 268.448687 389.976134 298.377088 315.292469 298.377088 250.310263 268.448687"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="0 270.26253 0 240.334129 202.094207 240.334129 266.634845 270.26253"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="402.673031 209.498807 402.673031 239.427208 200.578824 239.427208 136.038186 209.498807"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="-1.81384248 300.190931 -1.81384248 270.26253 72.8698225 270.26253 137.852029 300.190931"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="387.25537 359.140811 387.25537 389.069212 312.571705 389.069212 247.589499 359.140811"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="391.091678 299.28401 391.091678 329.212411 188.839347 329.212411 124.24821 299.28401"></polygon>
+                            <polygon id="Path" fill="#FFFFFF" mask="url(#mask-2)" points="-12.6968974 360.047733 -12.6968974 330.119332 189.397309 330.119332 253.937947 360.047733"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
