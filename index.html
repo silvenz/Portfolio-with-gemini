@@ -83,65 +83,81 @@
         opacity: 0.8;
       }
 
-      /* Hamburger Button Styles */
-      .hamburger-line {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: #333;
-        margin: 5px 0;
-        transition: 0.3s;
-        border-radius: 2px;
-      }
-
-      .navbar-toggler {
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
-        padding: 0.5rem;
-      }
-
-      .navbar-toggler:focus {
-        outline: none !important;
-        box-shadow: none !important;
-        border: none !important;
-      }
-
-      /* Mobile Menu Button Animation */
-      .navbar-toggler.active .hamburger-line:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px) !important;
-        background: white !important;
-        pointer-events: none !important;
-      }
-
-      .navbar-toggler.active .hamburger-line:nth-child(2) {
-        opacity: 0 !important;
-        background: white !important;
-        pointer-events: none !important;
-      }
-
-      .navbar-toggler.active .hamburger-line:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px) !important;
-        background: white !important;
-        pointer-events: none !important;
-      }
-
-      /* Ensure hamburger button stays above overlay */
-      .navbar-toggler.active {
-        position: relative;
-        z-index: 10001;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-      }
-
-      /* Make sure hamburger button is always clickable */
-      .navbar-toggler {
+      /* Vercel-style Hamburger Button */
+      .vercel-toggle {
+        width: 40px;
+        height: 40px;
+        border: 0.5px solid rgba(0, 0, 0, 0.15) !important;
+        background: transparent;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        padding: 0;
         position: relative;
         z-index: 10002;
-        cursor: pointer;
-        background: transparent;
-        pointer-events: auto !important;
+        outline: none !important;
       }
+
+      .vercel-toggle:hover {
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.25);
+      }
+
+      .vercel-toggle:active {
+        background: rgba(0, 0, 0, 0.08);
+        transform: scale(0.95);
+        outline: none !important;
+      }
+
+      .vercel-toggle:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .vercel-toggle-inner {
+        width: 18px;
+        height: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .vercel-line {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #000;
+        margin: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 1px;
+        transform-origin: center;
+      }
+
+      /* Active state animations - perfect cross positioning */
+      .vercel-toggle.active .vercel-line:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+      }
+
+      .vercel-toggle.active .vercel-line:nth-child(2) {
+        transform: translateY(-4px) rotate(-45deg);
+      }
+
+      /* Mobile menu overlay active state */
+      .mobile-menu-overlay.active + .vercel-toggle,
+      .vercel-toggle.active {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .vercel-toggle.active .vercel-line {
+        background: #fff;
+      }
+
+
 
       /* Ensure the button container is above everything */
       .navbar {
@@ -165,6 +181,8 @@
           font-size: 2.5rem; /* h1 size on desktop */
         }
       }
+
+
 
       /* Services styling */
       .service-list {
@@ -297,11 +315,6 @@
         align-items: center;
         justify-content: center;
         border: 1px solid rgba(0, 0, 0, 0.08);
-        transition: opacity 0.2s ease;
-      }
-
-      .client-logo-mobile:hover {
-        opacity: 0.95;
       }
 
       .client-logo-mobile img {
@@ -309,11 +322,6 @@
         max-width: 90px;
         object-fit: contain;
         filter: grayscale(100%);
-        opacity: 0.6;
-        transition: opacity 0.2s ease;
-      }
-
-      .client-logo-mobile:hover img {
         opacity: 1;
       }
 
@@ -327,6 +335,248 @@
         max-height: 45px;
         max-width: 70px;
       }
+
+      /* Framer-style Button Styling */
+                 .btn-framer {
+             display: inline-flex;
+             align-items: center;
+             justify-content: center;
+             gap: 12px;
+             padding: 16px 32px;
+             font-size: 16px;
+             font-weight: 500;
+             line-height: 1.2;
+             text-decoration: none;
+             border: 1px solid #000;
+             background: transparent;
+             color: #000;
+             border-radius: 50px;
+             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+             cursor: pointer;
+             position: relative;
+             overflow: hidden;
+             min-width: auto;
+             text-align: center;
+           }
+
+      .btn-framer:hover {
+        text-decoration: none;
+      }
+
+      .btn-framer::after {
+        content: "→";
+        font-size: 16px;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+      }
+
+      .btn-framer:hover {
+        background: #000;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-framer:hover::after {
+        transform: translateX(4px);
+      }
+
+      .btn-framer:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Ghost Button (transparent met border) */
+      .btn-framer.btn-framer-ghost {
+        background: transparent;
+        border: 1px solid #000;
+        color: #000;
+      }
+
+      .btn-framer.btn-framer-ghost:hover {
+        background: #000;
+        color: #fff;
+      }
+
+      .btn-framer.btn-framer-ghost.btn-framer-light:hover {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #fff !important;
+        text-decoration: none !important;
+        text-underline-offset: unset !important;
+        text-decoration-line: none !important;
+        text-decoration-style: none !important;
+        text-decoration-color: transparent !important;
+      }
+
+      .btn-framer.btn-framer-ghost.btn-framer-light:focus,
+      .btn-framer.btn-framer-ghost.btn-framer-light:active {
+        text-decoration: none !important;
+        text-underline-offset: unset !important;
+        text-decoration-line: none !important;
+        text-decoration-style: none !important;
+        text-decoration-color: transparent !important;
+      }
+
+      /* Filled Button (gevulde achtergrond) */
+      .btn-framer.btn-framer-filled {
+        background: #000;
+        border: 1px solid #000;
+        color: #fff;
+      }
+
+      .btn-framer.btn-framer-filled:hover {
+        background: transparent;
+        border: 1px solid #000;
+        color: #000;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .btn-framer.btn-framer-filled::after {
+        content: "↗";
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.6s ease;
+      }
+
+      .btn-framer.btn-framer-filled:hover::after {
+        content: "→";
+        transform: none;
+      }
+
+      /* Light variants voor donkere achtergronden */
+      .btn-framer.btn-framer-light {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      .btn-framer.btn-framer-light:hover {
+        background: transparent !important;
+        border: 1px solid #fff !important;
+        color: #fff !important;
+        transform: none !important;
+        box-shadow: none !important;
+      }
+
+      .btn-framer.btn-framer-light.btn-framer-filled {
+        background: #fff;
+        border: 1px solid #fff;
+        color: #000;
+      }
+
+      .btn-framer.btn-framer-light.btn-framer-filled:hover {
+        background: transparent !important;
+        border: 1px solid #fff !important;
+        color: #fff !important;
+        transform: none !important;
+        box-shadow: none !important;
+      }
+
+      .btn-framer.btn-framer-small {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+
+      /* Button zonder pijl */
+      .btn-framer.btn-framer-no-arrow::after {
+        content: none;
+      }
+
+      /* Verwijder alle underline effecten */
+      .btn-framer.btn-framer-no-arrow,
+      .btn-framer.btn-framer-no-arrow:hover,
+      .btn-framer.btn-framer-no-arrow:focus,
+      .btn-framer.btn-framer-no-arrow:active,
+      .btn-framer.btn-framer-no-arrow:visited {
+        text-decoration: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+      }
+
+
+
+      /* Specifiek voor button elementen */
+      button.btn-framer.btn-framer-no-arrow {
+        text-decoration: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border: 1px solid #fff !important;
+        background: transparent !important;
+      }
+
+      button.btn-framer.btn-framer-no-arrow:hover,
+      button.btn-framer.btn-framer-no-arrow:focus,
+      button.btn-framer.btn-framer-no-arrow:active {
+        text-decoration: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border: 1px solid #fff !important;
+        background: transparent !important;
+      }
+
+      .btn-framer.btn-framer-large {
+        padding: 16px 32px;
+        font-size: 18px;
+      }
+
+      /* Mobile button styling */
+      @media (max-width: 767px) {
+        .btn-framer.btn-framer-large {
+          padding: 16px 32px;
+          font-size: 16px;
+        }
+      }
+
+
+
+      /* Mobile hero heading font-size override */
+      @media (max-width: 575.98px) {
+        h1.display-6.hero {
+          font-size: 2rem !important;
+        }
+      }
+
+      /* Overschrijf Bootstrap button styling voor See my work button */
+      a.btn-framer.btn-framer-ghost.btn-framer-light {
+        text-decoration: none !important;
+        text-decoration-line: none !important;
+        text-decoration-style: none !important;
+        text-decoration-color: transparent !important;
+        text-underline: none !important;
+        border-bottom: none !important;
+        background: transparent !important;
+        color: #fff !important;
+        border: 1px solid #fff !important;
+        display: block !important;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.2;
+        border-radius: 50px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        text-align: center;
+        width: fit-content !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+      }
+
+      a.btn-framer.btn-framer-ghost.btn-framer-light:hover {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #fff !important;
+        text-decoration: none !important;
+        text-decoration-line: none !important;
+        text-decoration-style: none !important;
+        text-decoration-color: transparent !important;
+        text-underline: none !important;
+        border-bottom: none !important;
+      }
+
+
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -337,7 +587,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+        <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html"><img src="images/logo.svg" width="30" height="30" alt="logo"></a>
         
@@ -349,13 +599,14 @@
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <button class="navbar-toggler d-lg-none" type="button" id="mobileMenuBtn" aria-label="Toggle navigation">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="navbar-toggler d-lg-none vercel-toggle" type="button" id="mobileMenuBtn" aria-label="Toggle navigation">
+          <div class="vercel-toggle-inner">
+            <span class="vercel-line"></span>
+            <span class="vercel-line"></span>
+          </div>
         </button>
-              </nav>
-      </div>
+      </nav>
+    </div>
 
       <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay" id="mobileMenuOverlay">
@@ -369,7 +620,7 @@
           </div>
           <div class="mobile-menu-footer">
             <p class="text-muted">Let's create something amazing together</p>
-            <a href="contact.html" class="btn btn-outline-dark">Get in touch</a>
+            <a href="contact.html" class="btn-framer btn-framer-filled btn-framer-light">Let's talk</a>
           </div>
         </div>
       </div>
@@ -379,21 +630,20 @@
         <div class="col-1 d-none d-sm-block"></div>
         <div class="col-10 d-none d-sm-block">
           <div class="jumbotron">
-            <div id="circle"></div>
-            <h3 class="small hero">Hello, i'm Silven</h3>
-            <h1 class="display-6 hero">A multidisciplinary designer from Utrecht, working on brands, products, and digital experiences that matter to people.</h1>
-            <a href="contact.html" class="btn btn-outline-dark mt-4 hero" role="button">lets talk</a>
+
+            <h3 class="small hero">Hello, I'm Silven</h3>
+            <h1 class="display-6 hero">A visual and product designer from Utrecht, <span class="text-muted">working on brands and digital experiences that matter to people.</span></h1>
+            <a href="contact.html" class="btn-framer btn-framer-filled btn-framer-large mt-4 hero" role="button">Let's talk</a>
           </div>
         </div>
         <div class="col-1 d-none d-sm-block"></div>
 
         <div class="col-12 d-block d-sm-none">
-          <div id="circle"></div>
+
           <div class="jumbotron">
-            <h3 class="small hero">Hello, i'm Silven</h3>
-            <h1 class="display-6 hero">Multidisciplinary designer</h1>
-            <p class="hero">working on brands, products, and digital experiences that matter to people.</p>
-            <a href="contact.html" class="btn btn-outline-dark mt-4 hero" role="button">lets talk</a>
+            <h3 class="small hero">Hello, I'm Silven</h3>
+            <h1 class="display-6 hero">A visual and product designer from Utrecht, <span class="text-muted">working on brands and digital experiences that matter to people.</span></h1>
+            <a href="contact.html" class="btn-framer btn-framer-filled btn-framer-large mt-4 hero" role="button">Let's talk</a>
           </div>
         </div>
       </div>
@@ -404,7 +654,7 @@
         <div class="row align-items-end">       
           <div class="col-12 col-md-6">
             <div class="pb-4 pt-4 pb-md-6">
-              <h3 class="text-white h1-md">Work</h3>
+              <h3 class="text-white h1-md">My Work</h3>
               <p class="text-gray">Over the years, I've partnered with startups of all sizes and various stages to create some truly unique products. Here are a few that I feel were the most challenging yet rewarding.</p>
             </div>
             <div><a href="Dutchcustoms.html"><img class="img-fluid" src="images/cover_douane2.jpg" alt="Dutch Customs Project"></a></div>
@@ -462,7 +712,7 @@
         <div class="row align-self-center w-100 pt-4 pt-md-5 pb-5 pb-md-4">
           <div class="col-12">
             <a href="work.html">
-              <button type="button" class="btn mx-auto d-block btn-outline-light">More projects</button>
+              <a href="work.html" class="btn-framer btn-framer-ghost btn-framer-light btn-framer-no-arrow mx-auto d-block text-center">See more work</a>
             </a>
           </div>
         </div>
@@ -579,7 +829,7 @@
       <div class="container pt-4 pb-4">
         <div class="row">
           <div class="col-12 pb-3 pb-md-4">
-            <h3 class="small text-center">Selected clients</h3>
+            <h3 class="small">Selected clients</h3>
           </div>
         </div>
         <div class="row">
@@ -668,8 +918,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="js/app.js"></script>
     
     <!-- Mobile Menu JavaScript -->
     <script>
@@ -740,6 +988,25 @@
           content.classList.add('active');
         }
       }
+
+      // Remove underline from See my work button
+      document.addEventListener('DOMContentLoaded', function() {
+        const seeMyWorkBtn = document.querySelector('.btn-framer.btn-framer-ghost.btn-framer-light');
+        if (seeMyWorkBtn) {
+          seeMyWorkBtn.addEventListener('mouseenter', function() {
+            this.style.textDecoration = 'none';
+            this.style.textUnderline = 'none';
+            this.style.borderBottom = 'none';
+          });
+          seeMyWorkBtn.addEventListener('mouseleave', function() {
+            this.style.textDecoration = 'none';
+            this.style.textUnderline = 'none';
+            this.style.borderBottom = 'none';
+          });
+        }
+      });
+
+
     </script>
   </body>
 </html>
